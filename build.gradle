@@ -1,0 +1,36 @@
+plugins {
+    id 'io.gatling.gradle' version "3.6.1"
+}
+
+group 'io.tjohander'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.scala-lang:scala-library:2.12.4'
+    testImplementation 'io.gatling:gatling-app:3.6.1'
+    testImplementation 'io.gatling.highcharts:gatling-charts-highcharts:2.3.0'
+
+    //  Gatling
+    gatling 'com.google.code.gson:gson:2.8.0' // <1>
+    gatlingImplementation 'org.apache.commons:commons-lang3:3.4' // <2>
+    gatlingRuntimeOnly 'cglib:cglib-nodep:3.2.0' // <3>
+}
+
+// Gatling Block
+gatling {
+    toolVersion = '3.6.1'
+    jvmArgs = ['-server', '-Xms512M', '-Xmx512M']
+    systemProperties = ['file.encoding': 'UTF-8']
+}
+
+// needed if the Sim class isn't in src/gatling/scala
+sourceSets {
+    gatling {
+        scala.srcDir "src/test/scala"
+        resources.srcDir "src/test/resources"
+    }
+}

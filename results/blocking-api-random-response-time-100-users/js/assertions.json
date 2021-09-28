@@ -1,0 +1,10 @@
+{
+  "simulation": "MySimulation",
+  "simulationId": "mysimulation",
+  "start": 1632107132350,
+  "description": "",
+  "scenarios": ["Get A Random Pause and Result"],
+  "assertions": [
+
+  ]
+}

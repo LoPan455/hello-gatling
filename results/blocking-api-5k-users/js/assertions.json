@@ -1,0 +1,10 @@
+{
+  "simulation": "MySimulation",
+  "simulationId": "mysimulation",
+  "start": 1632078193169,
+  "description": "",
+  "scenarios": ["Get Posts"],
+  "assertions": [
+
+  ]
+}
